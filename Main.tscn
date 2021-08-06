@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://home.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Wall.gd" type="Script" id=3]
+[ext_resource path="res://food.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1906.44, 19.8857 )
+
+[node name="Main" type="Node2D"]
+position = Vector2( 3.36353, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 4, 4 )
+
+[node name="home" parent="." instance=ExtResource( 2 )]
+collision_layer = 15
+collision_mask = 15
+startingAnts = 100
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Node2D"]
+position = Vector2( -4.28369, 1188.05 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Wall"]
+shape = SubResource( 1 )
+
+[node name="Wall2" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 59.2318, -1163.57 )
+collision_layer = 7
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Wall2"]
+shape = SubResource( 1 )
+
+[node name="Wall3" type="StaticBody2D" parent="Node2D"]
+position = Vector2( -1865.98, -54.8172 )
+rotation = 1.56825
+collision_layer = 7
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Wall3"]
+shape = SubResource( 1 )
+
+[node name="Wall4" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1946.72, 28.7838 )
+rotation = 1.5708
+collision_layer = 7
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Wall4"]
+shape = SubResource( 1 )
+
+[node name="food" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1493.4, 759.837 )
+
+[node name="food2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1498.73, 855.945 )
+
+[node name="food3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1333.21, 797.212 )
+
+[node name="food4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1359.91, 909.339 )
+
+[node name="food5" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1397.29, 989.429 )
+
+[node name="food6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1671.22, 843.619 )
+
+[node name="food7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1570.31, 1049.06 )
+
+[node name="food8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1591.67, 894.216 )
+
+[node name="food9" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1338.55, 695.764 )
+
+[node name="food10" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1472.04, 909.339 )
+
+[node name="food11" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1402.63, 791.873 )
+
+[node name="food12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1629.04, 984.985 )
+
+[node name="food13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1677.1, 1107.79 )
+
+[node name="food14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1729.95, 874.576 )
+
+[node name="food15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1681.9, 965.345 )
+
+[node name="food16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1575.11, 949.327 )
+
+[node name="food17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1484.34, 965.345 )
+
+[node name="food18" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1508.33, 977.672 )
+
+[node name="food19" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1567.07, 833.509 )
+
+[node name="food20" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1435.74, 686.164 )
+
+[node name="food21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1542.54, 820.543 )

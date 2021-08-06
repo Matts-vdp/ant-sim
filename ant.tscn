@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ant.gd" type="Script" id=2]
+[ext_resource path="res://placeholder/circle.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 22.488
+height = 48.7494
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 144.18
+height = 231.903
+
+[node name="ant" type="KinematicBody2D"]
+position = Vector2( 511.945, 302.642 )
+collision_mask = 4
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.458824, 0.0392157, 0.0392157, 1 )
+scale = Vector2( 1.5, 0.75 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 187.114, 1.98755 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 30.3247, -10.1083 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 30.9193, 8.32446 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
